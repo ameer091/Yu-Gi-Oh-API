@@ -42,6 +42,6 @@ app.get('/api/duelists/:duelistName', (request, response) => {
 
 })
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || PORT, () => {//DO NOT FORGET TO ADD THE process.env.PORT DO NOT!!!!!!
  console.log(`Server Running on port ${PORT}`)
 })

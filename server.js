@@ -20,7 +20,7 @@ let duelists = {
     'mmt': 'Dragons',
     'series': 'Yu-Gi-Oh! Duel Monsters',
     'aceMonster': 'Blue-Eyes White Dragon'
-  }
+  },
   'unknown': {
     'mmt': 'unknown',
     'series': 'unknown',

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Yu-Gi-Oh Characters Info</h1>
+  <ul class = 'duelists'>
+  <% for(let i=0; i < duelistinfo.length; i++) {%>
+    <li class = 'duelist'>
+      <span><%= duelistinfo[i].mmt %></span>
+      <span><%= duelistinfo[i].series %></span>
+      <span><%= duelistinfo[i].aceMonster %></span>
+      <span class='del'>delete</span>
+    </li>
+  <% } %>
+  </ul>
+  <h2>Add a Duelist:</h2>
+
+  <form action='/addDuelist' method="POST">
+    <input type="text" placeholder = 'Main Monster Type' name = 'mmt'>
+    <input type="text" placeholder = 'Series' name = 'series'>
+    <input type="text" placeholder = 'Ace Monster' name = 'aceMonster'>
+    <input type="submit">
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

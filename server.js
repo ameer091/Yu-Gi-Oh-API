@@ -168,38 +168,38 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
   })
   .catch(error => console.error(error))
 
-app.get('/', (request, response) => {
-  response.sendFile(__dirname + '/index.html');
-});
+// app.get('/', (request, response) => {
+//   response.sendFile(__dirname + '/index.html');
+// });
 
-app.get('/api/duelists/:duelistName', (request, response) => {
-  const duelName = request.params.duelistName.toLowerCase()
-  const duel = duelists[duelName] ? duelists[duelName] : duelists['unknown'];
-  response.json(duel);
-});
+// app.get('/api/duelists/:duelistName', (request, response) => {
+//   const duelName = request.params.duelistName.toLowerCase()
+//   const duel = duelists[duelName] ? duelists[duelName] : duelists['unknown'];
+//   response.json(duel);
+// });
 
-let duelists = {
-  'yugi muto': {
-    'mmt': 'SpellCasters',
-    'series': 'Yu-Gi-Oh! Duel Monsters',
-    'aceMonster': 'Black Magician'
-  },
-  'judai yuki': {
-    'mmt': 'Warriors',
-    'series': 'Yu-Gi-Oh GX',
-    'aceMonster': 'Elemental Hero Neos'
-  },
-  'seto kaiba': {
-    'mmt': 'Dragons',
-    'series': 'Yu-Gi-Oh! Duel Monsters',
-    'aceMonster': 'Blue-Eyes White Dragon'
-  },
-  'unknown': {
-    'mmt': 'unknown',
-    'series': 'unknown',
-    'aceMonster': 'unknown'
-  }
-};
+// let duelists = {
+//   'yugi muto': {
+//     'mmt': 'SpellCasters',
+//     'series': 'Yu-Gi-Oh! Duel Monsters',
+//     'aceMonster': 'Black Magician'
+//   },
+//   'judai yuki': {
+//     'mmt': 'Warriors',
+//     'series': 'Yu-Gi-Oh GX',
+//     'aceMonster': 'Elemental Hero Neos'
+//   },
+//   'seto kaiba': {
+//     'mmt': 'Dragons',
+//     'series': 'Yu-Gi-Oh! Duel Monsters',
+//     'aceMonster': 'Blue-Eyes White Dragon'
+//   },
+//   'unknown': {
+//     'mmt': 'unknown',
+//     'series': 'unknown',
+//     'aceMonster': 'unknown'
+//   }
+// };
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);

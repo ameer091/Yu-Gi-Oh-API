@@ -126,7 +126,8 @@ const cors = require('cors');
 const PORT = 8000;
 const MongoClient = require('mongodb').MongoClient;
 
-const dbConnectionStr = 'mongodb+srv://ameersf0:RorhqcQDMZs2VkvC@cluster0.sf9xgsh.mongodb.net/?retryWrites=true&w=majority';
+const dbConnectionStr = 'mongodb+srv://ameersf0:RorhqcQDMZs2VkvC@cluster0.sf9xgsh.mongodb.net/?retryWrites=true&w=majority',
+dbName = 'yugioh'
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -134,11 +135,11 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(cors());
 
-let db;
+let db,
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database');
-    const db = client.db('yugioh');
+    const db = client.db(dbName);
 
     app.get('/', (request, response) => {
       db.collection('duelists').find().toArray()
